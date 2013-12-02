@@ -23,6 +23,8 @@
 #include "hintsystem.h"
 #include "SoundEmitterSystem/isoundemittersystembase.h"
 #include "c_env_fog_controller.h"
+//Todo
+//#include "TG_Game.h"
 
 #if defined USES_ECON_ITEMS
 #include "econ_item.h"
@@ -175,6 +177,13 @@ public:
 
 
 	bool			IsSuitEquipped( void ) { return m_Local.m_bWearingSuit; };
+	
+	//TODO
+	//TG_Game      neurosky;
+	//
+	
+	//TODO
+	//float			GetFear( void ){return neurosky.getAvg(); };
 
 	// Team handlers
 	virtual void	TeamChange( int iNewTeam );

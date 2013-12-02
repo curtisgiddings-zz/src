@@ -471,6 +471,10 @@ void C_BasePlayer::Spawn( void )
 	m_bWasFreezeFraming = false;
 
 	m_bFiredWeapon = false;
+
+	//TODO
+	// neurosky = new TG_Game();
+	//
 }
 
 //-----------------------------------------------------------------------------
@@ -2014,7 +2018,12 @@ void C_BasePlayer::PostThink( void )
 
 		StudioFrameAdvance();
 	}
-
+	// TODO
+	// if ( GetFear() > 40 ){
+	//     this->m_iHealth = 0;
+	// }
+	// Msg(" Fear: %f\n", GetFear());
+	
 	// Even if dead simulate entities
 	SimulatePlayerSimulatedEntities();
 #endif
