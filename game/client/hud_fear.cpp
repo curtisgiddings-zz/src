@@ -12,6 +12,7 @@
 //
 #include "cbase.h"
 #include "c_baseplayer.h"
+#include "c_basehlplayer.h"
 #include "hud.h"
 #include "hudelement.h"
 #include "hud_macros.h"
@@ -39,16 +40,9 @@ public:
 	void Reset( void );
 	void VidInit( void );
 	void OnThink( void );
-	void MsgFunc_Battery(bf_read &msg );
-	bool ShouldDraw();
-	
-private:
-	int		m_iBat;	
-	int		m_iNewBat;
 };
 
 DECLARE_HUDELEMENT( CHudFear );
-DECLARE_HUD_MESSAGE( CHudFear, Battery );
 
 //-----------------------------------------------------------------------------
 // Purpose: Constructor
@@ -97,15 +91,8 @@ void CHudFear::VidInit( void )
 //-----------------------------------------------------------------------------
 void CHudFear::OnThink( void )
 {
-	c_baseplayer *pPlayer = c_baseplayer::GetLocalPlayer();
+	C_BasePlayer *pPlayer = C_BasePlayer::GetLocalPlayer();
+
 	if ( pPlayer )
 		SetDisplayValue(pPlayer->GetFear());
-}
-
-//-----------------------------------------------------------------------------
-// Purpose: 
-//-----------------------------------------------------------------------------
-void CHudFear::MsgFunc_Battery( bf_read &msg )
-{
-	m_iNewBat = msg.ReadShort();
 }
