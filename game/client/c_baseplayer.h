@@ -184,6 +184,7 @@ public:
 	
 	//TODO
 	//float			GetFear( void ){return neurosky.getAvg(); };
+	int  GetFear(void) {return 40;};
 
 	// Team handlers
 	virtual void	TeamChange( int iNewTeam );

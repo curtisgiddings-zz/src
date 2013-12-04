@@ -25,7 +25,6 @@
 // memdbgon must be the last include file in a .cpp file!!!
 #include "tier0/memdbgon.h"
 
-#define INIT_BAT	-1
 
 //-----------------------------------------------------------------------------
 // Purpose: Displays suit power (armor) on hud
@@ -49,7 +48,7 @@ DECLARE_HUDELEMENT( CHudFear );
 //-----------------------------------------------------------------------------
 CHudFear::CHudFear( const char *pElementName ) : BaseClass(NULL, "HudFear"), CHudElement( pElementName )
 {
-	SetHiddenBits( HIDEHUD_HEALTH | HIDEHUD_NEEDSUIT );
+	SetHiddenBits( HIDEHUD_HEALTH /*| HIDEHUD_NEEDSUIT*/ );
 }
 
 //-----------------------------------------------------------------------------
